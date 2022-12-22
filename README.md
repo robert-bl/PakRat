@@ -21,10 +21,16 @@ MVP
 * Packing lists can be viewed in 'edit' and 'pack' setups
 * Packing lists "save" (are posted/put) intuitively
 
+Potential Stretch Goals
+* Double entry detection
+* Suggested items
+* Making quantities dynamically update with variable trip lengths
+
 #### Component Heirarchy
 ![Components](/assets/readme_images/componentheir.png)
 
 #### ERD
 ![ERD](/assets/readme_images/ERD.png)
+
 
 [Trello](https://trello.com/b/9eEmMGTF/pakrat)
