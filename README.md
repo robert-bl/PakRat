@@ -2,7 +2,10 @@
 
 ![packing](/assets/readme_images/packing.avif)
 
-A PERN stack app with React Bootstrap styling.
+A PERN stack app with TailwindCSS styling.
+
+Robert Buskirk-Lechner
+[GitHub](https://github.com/robert-bl) | [LinkedIn](https://www.linkedin.com/in/robert-buskirk-lechner/)
 
 PakRat allows you to create and save packing lists for trips.
 
