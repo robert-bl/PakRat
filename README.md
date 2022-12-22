@@ -11,15 +11,20 @@ Users can create accounts, then curate their own packing lists. Packing lists ha
 ![page](/assets/readme_images/packinglist.png)
 
 
+
+
 ### Project Planning
 
 MVP
 * Functioning Auth
 * Users can CRUD packing lists and items
 * Packing lists can be viewed in 'edit' and 'pack' setups
+* Packing lists "save" (are posted/put) intuitively
 
+#### Component Heirarchy
 ![Components](/assets/readme_images/componentheir.png)
 
+#### ERD
 ![ERD](/assets/readme_images/ERD.png)
 
 [Trello](https://trello.com/b/9eEmMGTF/pakrat)
