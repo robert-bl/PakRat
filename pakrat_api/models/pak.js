@@ -12,14 +12,14 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Pak.belongsTo(models.User, {
-        foreignKy: 'userId',
+        foreignKey: 'userId',
         alias: 'pakOwner',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
       Pak.hasMany(models.Item, {
-        foreignKy: 'pakId',
-        alias: 'pakItems',
+        foreignKey: 'pakId',
+        as: 'pakItems',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })

@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Item.belongsTo(models.Pak, {
-        foreignKy: 'pakId',
-        alias: 'itemPak',
+        foreignKey: 'pakId',
+        as: 'itemPak',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })

@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.hasMany(models.Pak, {
-        foreignKy: 'userId',
-        alias: 'ownerPaks',
+        foreignKey: 'userId',
+        as: 'ownerPaks',
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE'
       })
