@@ -37,3 +37,14 @@ Potential Stretch Goals
 
 
 [Trello](https://trello.com/b/9eEmMGTF/pakrat)
+
+
+
+
+Reference materials:
+
+res.write()/res.end() methods:
+https://blog.kevinchisholm.com/javascript/node-js/express-js/response-send-end-write-difference/
+
+incorporating json.stringify into res.write() methods:
+https://stackoverflow.com/questions/25209073/sending-multiple-responses-with-the-same-response-object-in-express-js
