@@ -1,14 +1,15 @@
 import { useState } from "react"
 
+
 import AddSubCat from "./AddSubCat"
 
-export default function PakControls ({subCats, setSubCats}) {
+export default function PakControls () {
 
     return (
         <div>
             <div>
                 <div>New Category</div>
-                <AddSubCat subCats={subCats} setSubCats={setSubCats}/>
+                <AddSubCat />
             </div>
             <div>Toggle Mode</div>
         </div>

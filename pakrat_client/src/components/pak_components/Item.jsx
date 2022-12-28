@@ -1,7 +1,11 @@
-export default function Item ({name}) {
+export default function Item ({itemInfo, itemIndex}) {
+    console.log(itemInfo)
     return (
         <div>
-            {name}
+            <div>{itemInfo.name}</div>
+            <div>
+                
+            </div>
         </div>
     )
 }

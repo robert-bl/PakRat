@@ -1,7 +1,9 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { DataContext } from "../../DataContext"
 
+export default function AddItem ({catName}) {
 
-export default function AddItem ({catName, pakItems, setPakItems}) {
+    const {pakItems, setPakItems} = useContext(DataContext)
 
     let emptyItemForm = {
         name: '',

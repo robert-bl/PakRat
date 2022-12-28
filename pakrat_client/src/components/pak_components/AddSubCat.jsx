@@ -1,6 +1,9 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { DataContext } from "../../DataContext"
 
-export default function AddSubCat ({subCats, setSubCats}) {
+export default function AddSubCat () {
+
+    const {subCats, setSubCats} = useContext(DataContext)
 
     let emptyCatForm = {
         name: '',

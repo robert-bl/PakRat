@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { DataContext } from "../../DataContext"
 
 import PakControls from "./PakControls"
 import PakSubCat from "./PakSubCat"
@@ -25,12 +26,16 @@ export default function Pak () {
     console.log(pakItems)
     return (
         <div>
-            <PakControls subCats={subCats} setSubCats={setSubCats}/>
+            <DataContext.Provider value={{pakItems, setPakItems, subCats, setSubCats}}>
+            <div>
+            <PakControls />
+            </div>
             <div>
                 {subCats.map((x) => (
-                    <PakSubCat catInfo={x} pakItems={pakItems} setPakItems={setPakItems} key={x.name}/>
+                    <PakSubCat catInfo={x} key={x.name}/>
                 ))}
             </div>
+            </DataContext.Provider>
         </div>
     )
 }
