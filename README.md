@@ -48,3 +48,6 @@ https://blog.kevinchisholm.com/javascript/node-js/express-js/response-send-end-w
 
 incorporating json.stringify into res.write() methods:
 https://stackoverflow.com/questions/25209073/sending-multiple-responses-with-the-same-response-object-in-express-js
+
+dynamic forms
+https://bapunawarsaddam.medium.com/add-and-remove-form-fields-dynamically-using-react-and-react-hooks-3b033c3c0bf5
