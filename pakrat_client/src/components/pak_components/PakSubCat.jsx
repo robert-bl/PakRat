@@ -10,7 +10,7 @@ export default function PakSubCat ({catInfo}) {
 
     return (
         !pakItems ? null :
-        <div>
+        <div className="border-2 border-highlight rounded-2xl mx-4 my-4 px-2 py-2">
             <h1>{catInfo.name}</h1>
             {pakItems.map((x, i) => (
                 x.subCategory === catInfo.name ? 

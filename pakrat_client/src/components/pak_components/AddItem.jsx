@@ -7,7 +7,7 @@ export default function AddItem ({catName}) {
 
     let emptyItemForm = {
         name: '',
-        quantity: 1,
+        count: 1,
         subCategory: catName,
         packed: false
     }
@@ -27,7 +27,6 @@ export default function AddItem ({catName}) {
         setNewItem(emptyItemForm)
     }
 
-    console.log(pakItems)
     return (
         <div>
             <form onSubmit={handleSubmit}>

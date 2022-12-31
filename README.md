@@ -51,3 +51,6 @@ https://stackoverflow.com/questions/25209073/sending-multiple-responses-with-the
 
 dynamic forms
 https://bapunawarsaddam.medium.com/add-and-remove-form-fields-dynamically-using-react-and-react-hooks-3b033c3c0bf5
+
+accordion display in react
+https://www.freecodecamp.org/news/build-accordion-menu-in-react-without-external-libraries/

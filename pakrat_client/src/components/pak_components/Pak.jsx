@@ -7,8 +7,8 @@ import PakSubCat from "./PakSubCat"
 export default function Pak () {
 
     const [pakInfo, setPakInfo] = useState({
-        name: 'Day Trip',
-        description: '',
+        name: 'Test Pak',
+        description: 'Test Desc.',
         items: []
     })
 
@@ -25,14 +25,14 @@ export default function Pak () {
 
     console.log(pakItems)
     return (
-        <div>
-            <DataContext.Provider value={{pakItems, setPakItems, subCats, setSubCats}}>
+        <div className="bg-dark text-light">
+            <DataContext.Provider value={{pakInfo, setPakInfo, pakItems, setPakItems, subCats, setSubCats}}>
             <div>
             <PakControls />
             </div>
             <div>
                 {subCats.map((x) => (
-                    <PakSubCat catInfo={x} key={x.name}/>
+                    <PakSubCat catInfo={x} key={x.name} />
                 ))}
             </div>
             </DataContext.Provider>
