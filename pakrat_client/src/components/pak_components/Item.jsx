@@ -43,7 +43,8 @@ export default function Item ({itemInfo, itemIndex}) {
                 <div>{itemInfo.name}</div>
                 {pakItems[itemIndex].count > 1 && <div>{pakItems[itemIndex].count}</div>}
             </div>
-            {openToggle && <div className='bg-med'>
+            {!openToggle ? null :
+            <div className='bg-med'>
                 <button onClick={add}>Add</button>
                 <button onClick={sub}>Sub</button>
                 <button onClick={remove}>Remove</button>
