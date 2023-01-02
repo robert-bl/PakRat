@@ -35,7 +35,7 @@ export default function Pak () {
 
     return (
         <div className="bg-dark text-light">
-            <DataContext.Provider value={{pakInfo, setPakInfo, pakItems, setPakItems, subCats, setSubCats}}>
+            <DataContext.Provider value={{pakInfo, setPakInfo, pakItems, setPakItems, subCats, setSubCats, toDelete, setToDelete}}>
             <div>
             <PakControls />
             </div>

@@ -54,3 +54,6 @@ https://bapunawarsaddam.medium.com/add-and-remove-form-fields-dynamically-using-
 
 accordion display in react
 https://www.freecodecamp.org/news/build-accordion-menu-in-react-without-external-libraries/
+
+axios call syntax
+https://www.bezkoder.com/axios-request/#Axios_DELETE_request

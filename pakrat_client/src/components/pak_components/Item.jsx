@@ -5,7 +5,7 @@ import { DataContext } from '../../DataContext'
 
 export default function Item ({itemInfo, itemIndex}) {
 
-    const { pakItems, setPakItems } = useContext(DataContext)
+    const { pakItems, setPakItems,toDelete, setToDelete } = useContext(DataContext)
 
     const add = (event) => {
         event.preventDefault()
@@ -27,10 +27,20 @@ export default function Item ({itemInfo, itemIndex}) {
 
     const remove = (event) => {
         event.preventDefault()
+        //add removed item to delete list if it has an id
+        if (pakItems[itemIndex].id) {
+        let addDeleteItem = [...toDelete]
+        addDeleteItem.push(pakItems[itemIndex])
+        setToDelete(addDeleteItem)
+        } else {
+            console.log('no id')
+            console.log(toDelete)
+        }
+
+        //remove item from pak Items
         let cutPak = [...pakItems]
         cutPak.splice(itemIndex, 1)
         setPakItems(cutPak)
-        console.log(pakItems)
     }
 
     const [openToggle, setOpenToggle] = useState(false)
