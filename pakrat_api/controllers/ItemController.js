@@ -37,7 +37,7 @@ const CreateItems = async (req, res) => {
             let newItem = await Item.create(newItemBody)
             res.write(JSON.stringify(newItem))
         } catch (error) {
-                throw error
+            throw error
         }
     })
 
@@ -46,5 +46,6 @@ const CreateItems = async (req, res) => {
 
 module.exports = {
     DeleteItems,
-    UpdateItems
+    UpdateItems,
+    CreateItems
 }

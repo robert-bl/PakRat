@@ -6,7 +6,7 @@ import axiosCreate from "../../services/apiServices"
 
 export default function PakControls () {
 
-    const { pakInfo, setPakInfo, pakItems, toDelete, setToDelete } = useContext(DataContext)
+    const { pakInfo, setPakInfo, pakItems, toDelete, setToDelete, getPakInfo } = useContext(DataContext)
 
     const postPak = async (data) => {
         try {
@@ -21,6 +21,21 @@ export default function PakControls () {
         let itemsData = sortItemsForAxios(pakItems, toDelete)
         deleteItems(itemsData.removedItems)
         updateItems(itemsData.existingItems)
+        createItems(itemsData.newItems, pakInfo.id)
+        getPakInfo()
+    }
+
+    const createItems = async (newItems, pakIdNo) => {
+        let data = {
+            pakId: pakIdNo,
+            items: newItems
+        }
+        try {
+            const response = await axiosCreate.post(`/api/item/create`, data)
+            return response.data
+        } catch (error) {
+            throw error
+        }
     }
 
     const updateItems = async (existingItems) => {
