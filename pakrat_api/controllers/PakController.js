@@ -18,25 +18,25 @@ const ReadPak = async (req, res) => {
 }
 
 const CreatePak = async (req, res) => {
-    //PATH: /api/pak/create_new_pak/:userId
+    //PATH: /api/pak/create_new_pak
     try {
-        let userId = parseInt(req.params.userId)
-        let newBody = {userId, ...req.body}
-        let newPak = await Pak.create(newBody)
-        res.write(JSON.stringify(newPak))
+        // let userId = parseInt(req.params.userId)
+        // let newBody = {userId, ...req.body}
+        let newPak = await Pak.create(req.body)
+        res.send(newPak)
 
-        let pakId = newPak.dataValues.id
-        req.body.pakItems.map(async (x) => {
-            try {
-            let newItemBody = {pakId, ...x}
-            let newItem = await Item.create(newItemBody)
-            res.write(JSON.stringify(newItem))
-            } catch (error) {
-                throw error
-            }
-        })
+        // let pakId = newPak.dataValues.id
+        // req.body.pakItems.map(async (x) => {
+        //     try {
+        //     let newItemBody = {pakId, ...x}
+        //     let newItem = await Item.create(newItemBody)
+        //     res.write(JSON.stringify(newItem))
+        //     } catch (error) {
+        //         throw error
+        //     }
+        // })
 
-        res.end()
+        // res.end()
 
     } catch (error) {
         console.log('CreatePak controller error')

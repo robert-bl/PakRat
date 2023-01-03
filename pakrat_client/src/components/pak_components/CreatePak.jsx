@@ -1,7 +1,11 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import axiosCreate from "../../services/apiServices"
+
 
 export default function CreatePak () {
 
+        let navigate = useNavigate()
 
     let pakForm = {
         name: '',
@@ -16,10 +20,20 @@ export default function CreatePak () {
         console.log(newPak)
     }
 
-    const handleSubmit = (event) => {
+    const postPak = async (data) => {
+        try {
+            const response = await axiosCreate.post(`/api/pak/create_new_pak`, data)
+            return response.data
+        } catch (error) {
+            throw error
+        }
+    }
+
+    const handleSubmit = async (event) => {
         event.preventDefault()
-        console.log(newPak)
-        
+        const resData = await postPak(newPak)
+        console.log(resData)
+        navigate(`/pak/${resData.id}`)
         setNewPak(pakForm)
     }
 
