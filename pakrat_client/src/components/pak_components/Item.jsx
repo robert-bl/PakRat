@@ -51,7 +51,7 @@ export default function Item ({itemInfo, itemIndex}) {
         <div>
             <div className='flex flex-row gap-2' onClick={() => setOpenToggle(!openToggle)}>
                 <div>{itemInfo.name}</div>
-                {pakItems[itemIndex].count > 1 && <div>{pakItems[itemIndex].count}</div>}
+                {pakItems[itemIndex].count > 1 ? <div>{pakItems[itemIndex].count}</div> : null}
             </div>
             {!openToggle ? null :
             <div className='bg-med'>

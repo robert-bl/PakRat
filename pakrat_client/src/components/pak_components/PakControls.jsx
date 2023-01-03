@@ -19,9 +19,9 @@ export default function PakControls () {
 
     const updatePak = async () => {
         let itemsData = sortItemsForAxios(pakItems, toDelete)
-        deleteItems(itemsData.removedItems)
-        updateItems(itemsData.existingItems)
-        createItems(itemsData.newItems, pakInfo.id)
+        await deleteItems(itemsData.removedItems)
+        await updateItems(itemsData.existingItems)
+        await createItems(itemsData.newItems, pakInfo.id)
         getPakInfo()
     }
 

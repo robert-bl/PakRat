@@ -31,7 +31,7 @@ export default function AddItem ({catName}) {
         <div>
             <form onSubmit={handleSubmit}>
                 <input type='text' id='name' onChange={handleChange} value={newItem.name} className='border-2 text-dark'></input>
-                <button type='submit'>Create</button>
+                <button type='submit'>Add Item</button>
             </form>
         </div>
     )
