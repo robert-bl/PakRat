@@ -1,16 +1,19 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { DataContext } from "../../DataContext"
 import { useNavigate } from "react-router-dom"
 import axiosCreate from "../../services/apiServices"
 
 
 export default function CreatePak () {
 
-        let navigate = useNavigate()
+    const { user } = useContext(DataContext)
+
+    let navigate = useNavigate()
 
     let pakForm = {
         name: '',
         description: '',
-        userId: 1
+        userId: user.id
     }
 
     const [newPak, setNewPak] = useState(pakForm)

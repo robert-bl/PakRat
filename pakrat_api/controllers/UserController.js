@@ -16,7 +16,8 @@ const Login = async (req, res) => {
         ) {
             let payload = {
             id: user.id,
-            email: user.email
+            email: user.email,
+            username: user.userName
             }
             let token = middleware.createToken(payload)
             return res.send({
@@ -50,8 +51,15 @@ const Register = async (req, res) => {
     }
 }
 
+const CheckSession = async (req, res) => {
+    //PATH: /api/user/session
+    const { payload } = res.locals
+    res.send(payload)
+}
+
 
 module.exports = {
     Login,
-    Register
+    Register,
+    CheckSession
 }

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 export default function Landing () {
     const navigate = useNavigate()
@@ -18,7 +18,7 @@ export default function Landing () {
     return (
         <div>
             <div>
-                <div>LogIn</div>
+                <Link to='/login'>LogIn</Link>
                 <div onClick={() => goToRegister()}>Register</div>
             </div>
                 <div onClick={() => goToPak(34)}>Go to Pak</div>
