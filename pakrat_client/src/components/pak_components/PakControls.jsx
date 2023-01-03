@@ -40,7 +40,6 @@ export default function PakControls () {
 
     const updateItems = async (existingItems) => {
         let data = {items: existingItems}
-        console.log(data)
         try {
             const response = await axiosCreate.put(`/api/item/update`, data)
             return response.data
@@ -50,7 +49,6 @@ export default function PakControls () {
     }
 
     const deleteItems = async (removedItems) => {
-        console.log(removedItems)
         await removedItems.map(async (x) => {   
             try {
                 const response = await axiosCreate.delete(`/api/item/delete/${x.id}`)

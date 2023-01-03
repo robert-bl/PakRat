@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 import { DataContext } from "../../DataContext"
 import axiosCreate from "../../services/apiServices"
 
@@ -6,6 +7,8 @@ import PakControls from "./PakControls"
 import PakSubCat from "./PakSubCat"
 
 export default function Pak () {
+
+    let { pak_id } = useParams()
 
     const [pakInfo, setPakInfo] = useState({
         name: '',
@@ -18,7 +21,7 @@ export default function Pak () {
     const [toDelete, setToDelete] = useState([])
 
     const getPakInfo = async () => {
-        const response = await axiosCreate.get('/api/pak/read/34')
+        const response = await axiosCreate.get(`/api/pak/read/${pak_id}`)
         console.log(response.data)
         let readSubCats = []
         response.data.pakItems.map((x) => {
