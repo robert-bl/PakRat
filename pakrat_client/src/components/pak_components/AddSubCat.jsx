@@ -14,14 +14,11 @@ export default function AddSubCat () {
 
     const handleChange = (event) => {
         setNewCat({...newCat, [event.target.id]: event.target.value})
-        console.log(newCat)
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(newCat)
         setSubCats([...subCats, newCat.name])
-        console.log(subCats)
         setNewCat(emptyCatForm)
     }
 

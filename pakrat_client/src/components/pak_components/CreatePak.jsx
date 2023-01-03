@@ -32,7 +32,6 @@ export default function CreatePak () {
     const handleSubmit = async (event) => {
         event.preventDefault()
         const resData = await postPak(newPak)
-        console.log(resData)
         navigate(`/pak/${resData.id}`)
         setNewPak(pakForm)
     }

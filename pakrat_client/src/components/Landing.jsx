@@ -10,11 +10,16 @@ export default function Landing () {
     const goToCreatePak = () => {
         navigate(`/create_pak`)
     }
+
+    const goToRegister = () => {
+        navigate('/register')
+    }
+
     return (
         <div>
             <div>
                 <div>LogIn</div>
-                <div>Register</div>
+                <div onClick={() => goToRegister()}>Register</div>
             </div>
                 <div onClick={() => goToPak(34)}>Go to Pak</div>
                 <div onClick={() => goToCreatePak()}>Create Pak</div>
