@@ -2,31 +2,28 @@ import { useNavigate, Link } from "react-router-dom"
 import { useContext } from "react"
 import { DataContext } from "../DataContext"
 
+
 export default function Landing () {
     const navigate = useNavigate()
 
     const { user } = useContext(DataContext)
 
-    const goToUserPage = () => {
-        navigate(`/user/${user.id}`)
+    const goTo= (path, param) => {
+        navigate(`${path}${param ? param : ''}`)
     }
 
-    const goToCreatePak = () => {
-        navigate(`/create_pak`)
-    }
-
-    const goToRegister = () => {
-        navigate('/register')
-    }
+    const buttonStyle = `bg-med w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-dark hover:text-light duration-300`
 
     return (
-        <div>
-            <div>
-                <Link to='/login'>LogIn</Link>
-                <div onClick={() => goToRegister()}>Register</div>
+        <div className="grid grid-cols-2 m-10">
+            <div className="m-auto">
+                <div onClick={() => goTo('/login')} className={buttonStyle}>Log In</div>
+                <div onClick={() => goTo('/register')} className={buttonStyle}>Register</div>
             </div>
-                <div onClick={() => goToUserPage()}>Go to User Page</div>
-                <div onClick={() => goToCreatePak()}>Create Pak</div>
+            <div className="m-auto">
+                <div onClick={() => goTo('/user/',user.id)} className={buttonStyle}>User Page</div>
+                <div onClick={() => goTo('/create_pak')} className={buttonStyle}>Create Pak</div>
+            </div>
         </div>
     )
 }

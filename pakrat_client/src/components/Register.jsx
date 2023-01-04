@@ -70,56 +70,38 @@ export default function Register () {
         }
         // console.log(formState)
     }
-    
-    const handleClear = (event) => {
-        event.preventDefault()
-        setFormState(initialState)
-    }
+
+    const buttonStyle = `bg-med w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-dark hover:text-light duration-300`
     
     return (
-        <div className="form">
-            <h1>Sign Up</h1>
+        <div className="w-4/5 mx-auto border-2 border-black rounded-md">
             <form onSubmit={handleSubmit}>
-            <input 
-                type="text" 
-                placeholder="Username" 
-                id="userName"
-                onChange={handleChange} 
-                value={formState.userName}/>
-            <label htmlFor="username">Username</label>
+                <div className='ml-60'>
+                <div className='flex-col'>
+                    <div htmlFor="username">Username</div>
+                    <input type="text" placeholder="Username" id="userName" onChange={handleChange} value={formState.userName} className='border border-med rounded-sm'/>
+                </div>
+                <div>
+                    <div htmlFor="email">Email</div>
+                    <input type="text" placeholder="Email" id="email" onChange={handleChange} value={formState.email} className='border border-med rounded-sm'/>
+            
+                </div>
+                <div>
+                    <div htmlFor="password">Password</div>
+                    <input type="password" placeholder="Password" id="password" onChange={handleChange} value={formState.password} className='border border-med rounded-sm'/>
+                </div>
+                <div>
+                    <div htmlFor="passwordConfirm">Confirm password</div>
+                    <input type="password" placeholder="Confirm password" id="passwordConfirm" onChange={handleChange} value={formState.passwordConfirm} className='border border-med rounded-sm'/>
+                </div>
     
-            <input 
-                type="text" 
-                placeholder="Email" 
-                id="email"
-                onChange={handleChange} 
-                value={formState.email}/>
-            <label htmlFor="email">Email</label>
-
-            <input 
-                type="password" 
-                placeholder="Password" 
-                id="password" 
-                onChange={handleChange}
-                value={formState.password}/>
-            <label htmlFor="password">Password</label>
-    
-            <input
-                type="password"
-                placeholder="Confirm password"
-                id="passwordConfirm"
-                onChange={handleChange}
-                value={formState.passwordConfirm}/>
-            <label htmlFor="passwordConfirm">Confirm password</label>
-    
-            <button type="submit">Sign Up</button>
-            <button type="button" onClick={handleClear}>Clear Form</button>
-    
+                <button type="submit" className={buttonStyle}>Sign Up</button>
+                </div>
+            </form>
             {formState.password.length > 6 && formState.numbersValid ? 
                 formState.matchValid ? <p className="valid">Password matches</p> : <p className="invalid">Passwords must match.</p> 
             : <p className="invalid">Passwords must be at least 7 characters and contain at least one number.</p>
             }
-            </form>
         </div>
     )
 }
