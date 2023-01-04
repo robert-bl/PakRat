@@ -1,4 +1,3 @@
-import './App.css';
 import { useState, useEffect } from 'react'
 import axiosCreate from './services/apiServices';
 import { useNavigate } from 'react-router-dom';
@@ -50,7 +49,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div className="bg-dark h-screen font-merri">
       <DataContext.Provider value={{authenticated, toggleAuthenticated, user, setUser, handleLogOut}}>
         <NavBar />
         <Main />

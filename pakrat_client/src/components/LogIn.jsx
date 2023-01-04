@@ -42,26 +42,34 @@ export default function LogIn () {
         }
     }
 
+    const buttonStyle = `bg-med w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-dark hover:text-light duration-300`
+
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="text" 
-                placeholder="Email" 
-                id="email"
-                onChange={handleChange} 
-                value={formState.email}/>
-            <label htmlFor="email">Email</label>
-
-            <input 
-                type="password" 
-                placeholder="Password" 
-                id="password" 
-                onChange={handleChange}
-                value={formState.password}/>
-            <label htmlFor="password">Password</label>
-    
-            <button type="submit">Log In</button>
-            </form>
+        <div className="w-4/5 mx-auto shadow-2xl border border-med">
+            <form onSubmit={handleSubmit}>
+                <div className='ml-60'>
+                <div className='flex-col'>
+                    <div htmlFor="email">Email</div>
+                    <input 
+                        type="text" 
+                        placeholder="Email" 
+                        id="email"
+                        onChange={handleChange} 
+                        value={formState.email} className='border border-med rounded-sm'/>
+                </div>
+                <div className='flex-col'>
+                    <div htmlFor="password">Password</div>
+                    <input 
+                        type="password" 
+                        placeholder="Password" 
+                        id="password" 
+                        onChange={handleChange}
+                        value={formState.password} className='border border-med rounded-sm'/>
+                </div>
+                <button type="submit" className={buttonStyle}>Log In</button>
+                </div>
+                </form>
+            </div>
     )
 }

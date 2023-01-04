@@ -74,7 +74,7 @@ export default function Register () {
     const buttonStyle = `bg-med w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-dark hover:text-light duration-300`
     
     return (
-        <div className="w-4/5 mx-auto border-2 border-black rounded-md">
+        <div className="w-4/5 mx-auto shadow-2xl border border-med">
             <form onSubmit={handleSubmit}>
                 <div className='ml-60'>
                 <div className='flex-col'>

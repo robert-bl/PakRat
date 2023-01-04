@@ -33,14 +33,16 @@ export default function UserPage () {
 
     return (
         (authenticated && user && parseInt(user.id) === parseInt(user_id) && pakList) ? (
-        <div>
-            <div>UserPage</div>
+        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2">
+            <div>
+            <div>PAKS</div>
             {pakList.map((x) => (
-                <div key={x.id} onClick={() => goToPak(x.id)}>
+                <div key={x.id} onClick={() => goToPak(x.id)} className='bg-med m-2 p-2 border-b-2 border-highlight cursor-pointer shadow-md'>
                     <div>{x.name}</div>
-                    <div>{x.description}</div>
+                    <div className="pl-8">{x.description}</div>
                 </div>
             ))}
+            </div>
         </div>)
         : <div>Access Denied</div>
     )

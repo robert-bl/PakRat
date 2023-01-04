@@ -11,6 +11,9 @@ module.exports = {
         med: "#A47DE5",
         light: "#FEF6FF",
         highlight: "#E8D5B5"
+      },
+      fontFamily: {
+        merri: ['Merriweather Sans', 'sans-serif']
       }
     },
   },
