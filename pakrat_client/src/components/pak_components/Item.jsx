@@ -5,7 +5,7 @@ import { DataContext } from '../../DataContext'
 
 export default function Item ({itemInfo, itemIndex}) {
 
-    const { pakItems, setPakItems,toDelete, setToDelete } = useContext(DataContext)
+    const { pakItems, setPakItems,toDelete, setToDelete, packingMode } = useContext(DataContext)
 
     const add = (event) => {
         event.preventDefault()
@@ -48,6 +48,13 @@ export default function Item ({itemInfo, itemIndex}) {
 
 
     return (
+        packingMode ?
+        <div className='flex flex-row gap-2'>
+                <div>{itemInfo.name}</div>
+                {pakItems[itemIndex].count > 1 ? <div>{pakItems[itemIndex].count}</div> : null}
+                <input type='checkbox'></input>
+        </div>
+        :
         <div>
             <div className='flex flex-row gap-2' onClick={() => setOpenToggle(!openToggle)}>
                 <div>{itemInfo.name}</div>

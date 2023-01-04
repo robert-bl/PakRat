@@ -5,14 +5,13 @@ export default function PackingToggler () {
 
     const { packingMode, togglePackingMode } = useContext(DataContext)
 
-    const handleClick = (event) => {
-        console.log('click')
-        console.log(event.taget.checked)
+    const handleClick = async () => {
+        await togglePackingMode(!packingMode)
     }
 
 
     return (
-        <div className="flex flex-row justify-center">
+        <div className="flex flex-row justify-center gap-2 my-2">
                 <div>Editing</div>
                 <div>
                     <label className="relative inline-flex items-center cursor-pointer">
