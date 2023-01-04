@@ -57,3 +57,6 @@ https://www.freecodecamp.org/news/build-accordion-menu-in-react-without-external
 
 axios call syntax
 https://www.bezkoder.com/axios-request/#Axios_DELETE_request
+
+toggle button
+https://flowbite.com/docs/forms/toggle/

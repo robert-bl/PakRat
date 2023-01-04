@@ -1,10 +1,14 @@
 import { useNavigate, Link } from "react-router-dom"
+import { useContext } from "react"
+import { DataContext } from "../DataContext"
 
 export default function Landing () {
     const navigate = useNavigate()
 
-    const goToPak = (pakNo) => {
-        navigate(`/pak/${pakNo}`)
+    const { user } = useContext(DataContext)
+
+    const goToUserPage = () => {
+        navigate(`/user/${user.id}`)
     }
 
     const goToCreatePak = () => {
@@ -21,7 +25,7 @@ export default function Landing () {
                 <Link to='/login'>LogIn</Link>
                 <div onClick={() => goToRegister()}>Register</div>
             </div>
-                <div onClick={() => goToPak(34)}>Go to Pak</div>
+                <div onClick={() => goToUserPage()}>Go to User Page</div>
                 <div onClick={() => goToCreatePak()}>Create Pak</div>
         </div>
     )

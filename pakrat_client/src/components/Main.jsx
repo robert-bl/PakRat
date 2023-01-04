@@ -3,6 +3,7 @@ import Landing from "./Landing"
 import LogIn from "./LogIn"
 import Pak from "./pak_components/Pak"
 import Register from "./Register"
+import UserPage from "./UserPage"
 
 
 
@@ -23,7 +24,9 @@ export default function Main () {
                 <Route path='/pak/:pak_id' element={<Pak />}/>
                 <Route path='/register' element={<Register />}/>
                 <Route path='/login' element={<LogIn />}/>
+                <Route path='/user/:user_id' element={<UserPage />}/>
             </Routes>
+                
             
         </div>
     )

@@ -19,6 +19,7 @@ export default function Pak () {
     const [pakItems, setPakItems] = useState([])
     const [subCats, setSubCats] = useState(['Misc.'])
     const [toDelete, setToDelete] = useState([])
+    const [packingMode, togglePackingMode] = useState(false)
 
     const getPakInfo = async () => {
         const response = await axiosCreate.get(`/api/pak/read/${pak_id}`)
@@ -38,7 +39,7 @@ export default function Pak () {
 
     return (
         <div className="bg-dark text-light">
-            <DataContext.Provider value={{pakInfo, setPakInfo, pakItems, setPakItems, subCats, setSubCats, toDelete, setToDelete, getPakInfo}}>
+            <DataContext.Provider value={{pakInfo, setPakInfo, pakItems, setPakItems, subCats, setSubCats, toDelete, setToDelete, getPakInfo, packingMode, togglePackingMode}}>
             <div>
             <PakControls />
             </div>

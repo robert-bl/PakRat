@@ -1,8 +1,10 @@
 import { useState, useContext } from "react"
 import { DataContext } from '../../DataContext'
+import axiosCreate from "../../services/apiServices"
 
 import AddSubCat from "./AddSubCat"
-import axiosCreate from "../../services/apiServices"
+import PackingToggler from "./PackingToggler"
+
 
 export default function PakControls () {
 
@@ -88,7 +90,7 @@ export default function PakControls () {
                 <div>New Category</div>
                 <AddSubCat />
             </div>
-            <div>Toggle Mode</div>
+            <PackingToggler />
             <div onClick={submitPak}>Save Pak</div>
         </div>
     )

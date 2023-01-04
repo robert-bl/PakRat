@@ -17,6 +17,20 @@ const ReadPak = async (req, res) => {
     }
 }
 
+const GetUserPaks = async (req, res) => {
+    //PATH: /api/pak/get_paks/user_id
+    try {
+        console.log(req.params.user_id)
+        let user_id = (req.params.user_id)
+        let userPaks = await Pak.findAll(
+            {where:{userId: user_id}}
+        )
+        res.send(userPaks)
+    } catch (error) {
+        throw error
+    }
+}
+
 const CreatePak = async (req, res) => {
     //PATH: /api/pak/create_new_pak
     try {
@@ -46,5 +60,6 @@ const CreatePak = async (req, res) => {
 
 module.exports = {
     ReadPak,
-    CreatePak
+    CreatePak,
+    GetUserPaks
 }
