@@ -7,6 +7,8 @@ export default function Item ({itemInfo, itemIndex}) {
 
     const { pakItems, setPakItems,toDelete, setToDelete, packingMode } = useContext(DataContext)
 
+    const [openToggle, setOpenToggle] = useState(false)
+
     const add = (event) => {
         event.preventDefault()
         let updateItems = [...pakItems]
@@ -43,16 +45,23 @@ export default function Item ({itemInfo, itemIndex}) {
         setPakItems(cutPak)
     }
 
-    const [openToggle, setOpenToggle] = useState(false)
+    const handlePacked = () => {
+        let packingItem = [...pakItems]
+        packingItem[itemIndex].packed = !packingItem[itemIndex].packed
+        setPakItems(packingItem)
+    }
 
+    let packedColorCode = ''
+    pakItems[itemIndex].packed ? packedColorCode = 'bg-med' : packedColorCode = 'bg-transparent'
 
+    let packingItemStyle = `flex flex-row gap-2 ${packedColorCode}`
 
     return (
         packingMode ?
-        <div className='flex flex-row gap-2'>
+        <div className={packingItemStyle}>
                 <div>{itemInfo.name}</div>
                 {pakItems[itemIndex].count > 1 ? <div>{pakItems[itemIndex].count}</div> : null}
-                <input type='checkbox'></input>
+                <div className='border border-light rounded-2xl ' onClick={handlePacked}>Packed</div>
         </div>
         :
         <div>

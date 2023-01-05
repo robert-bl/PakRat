@@ -3,7 +3,7 @@ import { DataContext } from "../../DataContext"
 
 export default function AddItem ({catName}) {
 
-    const {pakItems, setPakItems} = useContext(DataContext)
+    const {pakItems, setPakItems, packingMode} = useContext(DataContext)
 
     let emptyItemForm = {
         name: '',
@@ -28,10 +28,12 @@ export default function AddItem ({catName}) {
     }
 
     return (
+        packingMode ?
+        null :
         <div>
             <form onSubmit={handleSubmit}>
-                <input type='text' id='name' onChange={handleChange} value={newItem.name} className='border-2 text-dark'></input>
-                <button type='submit'>Add Item</button>
+                <input type='text' id='name' placeholder="Add Item" onChange={handleChange} value={newItem.name} className='border-2 text-dark'></input>
+                <button type='submit'>+</button>
             </form>
         </div>
     )

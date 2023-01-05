@@ -86,10 +86,8 @@ export default function PakControls () {
 
     return (
         <div>
-            <div>
-                <div>New Category</div>
-                <AddSubCat />
-            </div>
+            <div>New Category</div>
+            <AddSubCat />
             <PackingToggler />
             <div onClick={submitPak}>Save Pak</div>
         </div>

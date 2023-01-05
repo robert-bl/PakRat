@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { useParams } from "react-router-dom"
 import { DataContext } from "../../DataContext"
 import axiosCreate from "../../services/apiServices"
@@ -7,6 +7,8 @@ import PakControls from "./PakControls"
 import PakSubCat from "./PakSubCat"
 
 export default function Pak () {
+
+    const { user, authenticated } = useContext(DataContext)
 
     let { pak_id } = useParams()
 
@@ -38,18 +40,21 @@ export default function Pak () {
     }, [])
 
     return (
+        (authenticated && user && parseInt(user.id) === parseInt(pakInfo.userId)) ?
         <div className="bg-dark text-light">
             <DataContext.Provider value={{pakInfo, setPakInfo, pakItems, setPakItems, subCats, setSubCats, toDelete, setToDelete, getPakInfo, packingMode, togglePackingMode}}>
             <div>
             <PakControls />
             </div>
             
-            <div>
+            <div className="grid grid-cols-2">
                 {subCats.map((x) => (
                     <PakSubCat catName={x} key={x} />
                 ))}
             </div>
             </DataContext.Provider>
         </div>
+        :
+        <div>Access Denied...</div>
     )
 }
