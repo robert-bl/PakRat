@@ -17,7 +17,7 @@ export default function NavBar () {
 
     return (
         <div className="flex justify-between p-2 bg-med font-playfair">
-            <div className='text-4xl p-2 text-dark'>PakRat</div>
+            <div className='text-6xl p-2 text-dark'>PakRat</div>
             <div className="flex-col gap-2">
             <div onClick={() => goTo('/user/',user.id)} className={navLinkStyle}>Home</div>
                 {user ? <div onClick={() => handleLogOut()} className={navLinkStyle}>Log Out</div> : null}
