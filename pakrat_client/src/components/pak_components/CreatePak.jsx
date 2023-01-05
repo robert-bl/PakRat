@@ -51,11 +51,11 @@ export default function CreatePak () {
             <form onSubmit={handleSubmit} className='flex flex-col w-4/5 mx-auto'>
                 <div className="flex flex-col py-2">
                     <label>Pak Name</label>
-                    <input type='text' id='name' onChange={handleChange} placeholder='pak name' value={newPak.name}></input>
+                    <input type='text' id='name' onChange={handleChange} placeholder='pak name' value={newPak.name} className="pl-2"></input>
                 </div>
                 <div className="flex flex-col py-2">
                     <label>Description</label>
-                    <input type='text' id='description' onChange={handleChange} placeholder='description' value={newPak.description}></input>
+                    <input type='text' id='description' onChange={handleChange} placeholder='description' value={newPak.description} className="pl-2"></input>
                 </div>
                 <div className="flex justify-center">
                     <button type='submit' className={buttonStyle}>Create Pak</button>

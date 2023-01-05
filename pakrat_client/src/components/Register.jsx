@@ -79,20 +79,20 @@ export default function Register () {
                 <div className='ml-60'>
                 <div className='flex-col'>
                     <div htmlFor="username">Username</div>
-                    <input type="text" placeholder="Username" id="userName" onChange={handleChange} value={formState.userName} className='border border-med rounded-sm pl-2'/>
+                    <input type="text" placeholder="Username" id="userName" onChange={handleChange} value={formState.userName} className='rounded-sm pl-2'/>
                 </div>
                 <div>
                     <div htmlFor="email">Email</div>
-                    <input type="text" placeholder="Email" id="email" onChange={handleChange} value={formState.email} className='border border-med rounded-sm pl-2'/>
+                    <input type="text" placeholder="Email" id="email" onChange={handleChange} value={formState.email} className='rounded-sm pl-2'/>
             
                 </div>
                 <div>
                     <div htmlFor="password">Password</div>
-                    <input type="password" placeholder="Password" id="password" onChange={handleChange} value={formState.password} className='border border-med rounded-sm pl-2'/>
+                    <input type="password" placeholder="Password" id="password" onChange={handleChange} value={formState.password} className='rounded-sm pl-2'/>
                 </div>
                 <div>
                     <div htmlFor="passwordConfirm">Confirm password</div>
-                    <input type="password" placeholder="Confirm password" id="passwordConfirm" onChange={handleChange} value={formState.passwordConfirm} className='border border-med rounded-sm pl-2'/>
+                    <input type="password" placeholder="Confirm password" id="passwordConfirm" onChange={handleChange} value={formState.passwordConfirm} className='rounded-sm pl-2'/>
                 </div>
     
                 <button type="submit" className={buttonStyle}>Sign Up</button>

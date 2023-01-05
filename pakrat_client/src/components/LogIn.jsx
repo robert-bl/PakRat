@@ -54,18 +54,19 @@ export default function LogIn () {
             <div onClick={goTo('/user/',user.id)} className={buttonStyle}>Go To User Page</div>
         </div>
         :
-        <div className="w-4/5 mx-auto shadow-2xl border border-med mt-10">
+        <div className="w-4/5 mx-auto shadow-2xl bg-light p-4 mt-10">
             <form onSubmit={handleSubmit}>
+                <div className='text-xl'>Log In</div>
                 <div className='ml-60'>
-                <div className='flex-col'>
-                    <div htmlFor="email">Email</div>
-                    <input type="text" placeholder="Email" id="email" onChange={handleChange} value={formState.email} className='border border-med rounded-sm'/>
-                </div>
-                <div className='flex-col'>
-                    <div htmlFor="password">Password</div>
-                    <input type="password" placeholder="Password" id="password" onChange={handleChange} value={formState.password} className='border border-med rounded-sm'/>
-                </div>
-                <button type="submit" className={buttonStyle}>Log In</button>
+                    <div className='flex-col'>
+                        <div htmlFor="email">Email</div>
+                        <input type="text" placeholder="Email" id="email" onChange={handleChange} value={formState.email} className='rounded-sm'/>
+                    </div>
+                    <div className='flex-col'>
+                        <div htmlFor="password">Password</div>
+                        <input type="password" placeholder="Password" id="password" onChange={handleChange} value={formState.password} className='rounded-sm'/>
+                    </div>
+                    <button type="submit" className={buttonStyle}>Log In</button>
                 </div>
                 </form>
             </div>

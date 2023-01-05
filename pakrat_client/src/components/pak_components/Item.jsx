@@ -60,30 +60,30 @@ export default function Item ({itemInfo, itemIndex}) {
     let packedColorCode = ''
     pakItems[itemIndex].packed ? packedColorCode = 'bg-highlight text-light' : packedColorCode = 'bg-transparent'
 
-    let packingItemStyle = `flex flex-row justify-between gap-2 p-2 ${packedColorCode}`
+    let packingItemStyle = `flex flex-row justify-between gap-2 p-2 cursor-pointer ${packedColorCode}`
 
     return (
         packingMode ?
-        <div className={packingItemStyle}>
+        <div className={packingItemStyle} onClick={handlePacked}>
             <div className='flex gap-2'>
                 <div>{itemInfo.name}</div>
                 {pakItems[itemIndex].count > 1 ? <div>{pakItems[itemIndex].count}</div> : null}
                 </div>
-            <div onClick={handlePacked}>{!pakItems[itemIndex].packed ? <ImDownload/> : <ImCheckmark/>}</div>
+            <div>{!pakItems[itemIndex].packed ? <ImDownload/> : <ImCheckmark/>}</div>
         </div>
         :
         <div className='flex justify-between content-center border-b-2 border-highlight p-2'>
             <div className='flex flex-row gap-2' onClick={() => setOpenToggle(!openToggle)}>
-                <div>{itemInfo.name}</div>
-                {pakItems[itemIndex].count > 1 ? <div>{pakItems[itemIndex].count}</div> : null}
+                <div className='mt-1'>{itemInfo.name}</div>
+                {pakItems[itemIndex].count > 1 ? <div className='mt-1'>{pakItems[itemIndex].count}</div> : null}
             </div>
 
             <div className='flex'>
                 <div className='flex flex-col mr-4'>
-                    <button onClick={add}><HiPlusSm/></button>
-                    <button onClick={sub}><HiMinusSm/></button>
+                    <button onClick={add} className='rounded-full border border-light hover:border-dark duration-300'><HiPlusSm/></button>
+                    <button onClick={sub} className='rounded-full border border-light hover:border-dark duration-300'><HiMinusSm/></button>
                 </div>
-                <button onClick={remove}><HiOutlineX/></button>
+                <button onClick={remove} className='rounded-full border border-light hover:border-dark duration-300'><HiOutlineX/></button>
             </div>
         </div>
     )
