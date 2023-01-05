@@ -49,7 +49,7 @@ function App() {
   }, [])
 
   return (
-    <div className="bg-white h-screen font-lato tracking-wide">
+    <div className="bg-white h-screen font-lato tracking-wide text-dark">
       <DataContext.Provider value={{authenticated, toggleAuthenticated, user, setUser, handleLogOut}}>
         <NavBar />
         <Main />

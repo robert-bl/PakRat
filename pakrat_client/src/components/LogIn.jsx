@@ -16,6 +16,10 @@ export default function LogIn () {
 
     const [formState, setFormState] = useState(initialState)
 
+    const goTo= (path, param) => {
+        navigate(`${path}${param ? param : ''}`)
+    }
+
     const handleChange = (event) => {
         setFormState({...formState, [event.target.id]: event.target.value})
         // console.log(formState)
@@ -27,9 +31,9 @@ export default function LogIn () {
         const payload = await LogInUser(formState)
         setFormState(initialState)
         console.log(payload)
-        setUser(payload)
+        await setUser(payload)
         toggleAuthenticated(true)
-        navigate('/')
+        goTo('/user/',user.id)
     }
 
     const LogInUser = async (data) => {

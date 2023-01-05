@@ -39,14 +39,25 @@ export default function CreatePak () {
         setNewPak(pakForm)
     }
 
+    const buttonStyle = `bg-med w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-dark hover:text-light duration-300`
+
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>Pak Name</label>
-                <input type='text' id='name' onChange={handleChange} placeholder='pak name' value={newPak.name}></input>
-                <label>Description</label>
-                <input type='text' id='description' onChange={handleChange} placeholder='description' value={newPak.description}></input>
-                <button type='submit'>Create Pak</button>
+        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2">
+            <div className="flex justify-center">
+                <div className="text-xl">New Pak</div>
+            </div>
+            <form onSubmit={handleSubmit} className='flex flex-col w-4/5 mx-auto'>
+                <div className="flex flex-col py-2">
+                    <label>Pak Name</label>
+                    <input type='text' id='name' onChange={handleChange} placeholder='pak name' value={newPak.name}></input>
+                </div>
+                <div className="flex flex-col py-2">
+                    <label>Description</label>
+                    <input type='text' id='description' onChange={handleChange} placeholder='description' value={newPak.description}></input>
+                </div>
+                <div className="flex justify-center">
+                    <button type='submit' className={buttonStyle}>Create Pak</button>
+                </div>
             </form>
         </div>
     )

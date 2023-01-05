@@ -21,7 +21,6 @@ export default function Landing () {
                 <div onClick={() => goTo('/register')} className={buttonStyle}>Register</div>
             </div>
             <div className="m-auto">
-                <div onClick={() => goTo('/user/',user.id)} className={buttonStyle}>User Page</div>
                 <div onClick={() => goTo('/create_pak')} className={buttonStyle}>Create Pak</div>
             </div>
         </div>

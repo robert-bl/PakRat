@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { useContext } from "react"
 import { DataContext } from "../DataContext"
 
+import RatIcon from "./svg"
 
 export default function NavBar () {
 
@@ -17,7 +18,10 @@ export default function NavBar () {
 
     return (
         <div className="flex justify-between p-2 bg-med font-playfair">
-            <div className='text-6xl p-2 text-dark'>PakRat</div>
+            <div className='text-6xl p-2 text-dark flex'><RatIcon/>PakRat</div>
+            <div>
+                
+            </div>
             <div className="flex-col gap-2">
             <div onClick={() => goTo('/user/',user.id)} className={navLinkStyle}>Home</div>
                 {user ? <div onClick={() => handleLogOut()} className={navLinkStyle}>Log Out</div> : null}
