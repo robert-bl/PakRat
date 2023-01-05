@@ -25,7 +25,7 @@ export default function AddSubCat () {
     }
 
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-2">
             <form onSubmit={handleSubmit}>
                 <input type='text' id='name' onChange={handleChange} placeholder="Add Category (e.g. 'Clothes', 'Gear', 'Food')" value={newCat.name} className='border-t border-l border-b border-highlight pl-2 w-80'></input>
                 <button type='submit' className="bg-highlight px-2 border-t border-r border-b border-highlight rounded-r-md text-light">+</button>

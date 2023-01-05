@@ -35,17 +35,17 @@ export default function UserPage () {
         navigate(`${path}${param ? param : ''}`)
     }
 
-    const buttonStyle = `bg-med w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 ml-2 hover:bg-dark hover:text-light duration-300`
+    const buttonStyle = `bg-med w-32 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 ml-2 hover:bg-dark hover:text-light duration-300`
 
     return (
         (authenticated && user && parseInt(user.id) === parseInt(user_id) && pakList) ? (
-        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2">
+        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2 mt-10">
             <div>
-            <div >PAKS</div>
-            <div onClick={() => goTo('/create_pak')} className={buttonStyle}>Create Pak</div>
+            <div className="text-xl">PAKS</div>
+            <div onClick={() => goTo('/create_pak')} className={buttonStyle}>Create New Pak</div>
             {pakList.map((x) => (
                 <div key={x.id} onClick={() => goToPak(x.id)} className='bg-med m-2 p-2 border-b-2 border-highlight cursor-pointer shadow-md'>
-                    <div>{x.name}</div>
+                    <div className="text-lg">{x.name}</div>
                     <div className="pl-8">{x.description}</div>
                 </div>
             ))}

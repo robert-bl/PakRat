@@ -16,7 +16,7 @@ export default function ProgressBar () {
     }, [pakItems])
 
     return (
-        <div className="flex gap-2">
+        <div className="flex gap-2 border-b-2 border-highlight">
             <div class="w-full bg-gray-400 rounded-full h-2.5 mt-2">
                 <div class="bg-highlight h-2.5 rounded-full" style={{width: progress}}></div>
             </div>

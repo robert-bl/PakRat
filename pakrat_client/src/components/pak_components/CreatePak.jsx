@@ -34,15 +34,17 @@ export default function CreatePak () {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
+        if (newPak.name !== '') {
         const resData = await postPak(newPak)
         navigate(`/pak/${resData.id}`)
         setNewPak(pakForm)
+        }
     }
 
     const buttonStyle = `bg-med w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-dark hover:text-light duration-300`
 
     return (
-        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2">
+        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2 mt-10">
             <div className="flex justify-center">
                 <div className="text-xl">New Pak</div>
             </div>

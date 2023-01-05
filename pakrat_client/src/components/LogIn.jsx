@@ -54,7 +54,7 @@ export default function LogIn () {
             <div onClick={goTo('/user/',user.id)} className={buttonStyle}>Go To User Page</div>
         </div>
         :
-        <div className="w-4/5 mx-auto shadow-2xl border border-med">
+        <div className="w-4/5 mx-auto shadow-2xl border border-med mt-10">
             <form onSubmit={handleSubmit}>
                 <div className='ml-60'>
                 <div className='flex-col'>

@@ -42,7 +42,7 @@ export default function Pak () {
 
     return (
         (authenticated && user && parseInt(user.id) === parseInt(pakInfo.userId)) ?
-        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2 rounded-t-xl">
+        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2 my-10">
             <DataContext.Provider value={{pakInfo, setPakInfo, pakItems, setPakItems, subCats, setSubCats, toDelete, setToDelete, getPakInfo, packingMode, togglePackingMode}}>
             <div>
             <PakControls />

@@ -49,14 +49,17 @@ https://blog.kevinchisholm.com/javascript/node-js/express-js/response-send-end-w
 incorporating json.stringify into res.write() methods:
 https://stackoverflow.com/questions/25209073/sending-multiple-responses-with-the-same-response-object-in-express-js
 
-dynamic forms
+dynamic forms:
 https://bapunawarsaddam.medium.com/add-and-remove-form-fields-dynamically-using-react-and-react-hooks-3b033c3c0bf5
 
-accordion display in react
+accordion display in react:
 https://www.freecodecamp.org/news/build-accordion-menu-in-react-without-external-libraries/
 
-axios call syntax
+axios call syntax:
 https://www.bezkoder.com/axios-request/#Axios_DELETE_request
 
-toggle button
+toggle button:
 https://flowbite.com/docs/forms/toggle/
+
+progress bar:
+https://flowbite.com/docs/components/progress/

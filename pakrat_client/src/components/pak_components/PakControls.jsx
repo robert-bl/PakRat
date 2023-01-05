@@ -85,11 +85,18 @@ export default function PakControls () {
         }
     }
 
+    const buttonStyle = `bg-highlight text-light w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-light hover:text-highlight duration-300 border-2 border-highlight`
+
     return (
         <div>
-            <PackingToggler />
-            {packingMode ? <ProgressBar /> : null}
-            <div onClick={submitPak}>Save Pak</div>
+            <div className="grid grid-cols-3">
+                <div>{pakInfo.name}</div>
+                <PackingToggler />
+                <div className="flex justify-end items-start">
+                    <div onClick={submitPak} className={buttonStyle}>Save Pak</div>
+                </div>
+            </div>
+            {packingMode ? <ProgressBar /> : <div className="h-6 border-b-2 border-highlight"></div>}
         </div>
     )
 }

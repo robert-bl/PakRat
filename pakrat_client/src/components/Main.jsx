@@ -17,7 +17,6 @@ export default function Main () {
 
     return (
         <div>
-            <div>Name: {user ? user.username : null}</div>
             <Routes>
                 <Route path='/' element={<Landing />}/>
                 <Route path='/create_pak' element={<CreatePak />}/>

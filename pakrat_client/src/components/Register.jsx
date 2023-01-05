@@ -61,7 +61,6 @@ export default function Register () {
         if (formState.password === formState.passwordConfirm) {
             await registerUser(formState)
             setFormState(initialState)
-            alert('You have succesfully registered an account.')
             navigate(`/login`)
             // setFormState({...formState, matchValid: true})
         } else {
@@ -74,34 +73,31 @@ export default function Register () {
     const buttonStyle = `bg-med w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-dark hover:text-light duration-300`
     
     return (
-        <div className="w-4/5 mx-auto shadow-2xl border border-med">
+        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2 mt-10">
+            <div className='text-xl'>Register</div>
             <form onSubmit={handleSubmit}>
                 <div className='ml-60'>
                 <div className='flex-col'>
                     <div htmlFor="username">Username</div>
-                    <input type="text" placeholder="Username" id="userName" onChange={handleChange} value={formState.userName} className='border border-med rounded-sm'/>
+                    <input type="text" placeholder="Username" id="userName" onChange={handleChange} value={formState.userName} className='border border-med rounded-sm pl-2'/>
                 </div>
                 <div>
                     <div htmlFor="email">Email</div>
-                    <input type="text" placeholder="Email" id="email" onChange={handleChange} value={formState.email} className='border border-med rounded-sm'/>
+                    <input type="text" placeholder="Email" id="email" onChange={handleChange} value={formState.email} className='border border-med rounded-sm pl-2'/>
             
                 </div>
                 <div>
                     <div htmlFor="password">Password</div>
-                    <input type="password" placeholder="Password" id="password" onChange={handleChange} value={formState.password} className='border border-med rounded-sm'/>
+                    <input type="password" placeholder="Password" id="password" onChange={handleChange} value={formState.password} className='border border-med rounded-sm pl-2'/>
                 </div>
                 <div>
                     <div htmlFor="passwordConfirm">Confirm password</div>
-                    <input type="password" placeholder="Confirm password" id="passwordConfirm" onChange={handleChange} value={formState.passwordConfirm} className='border border-med rounded-sm'/>
+                    <input type="password" placeholder="Confirm password" id="passwordConfirm" onChange={handleChange} value={formState.passwordConfirm} className='border border-med rounded-sm pl-2'/>
                 </div>
     
                 <button type="submit" className={buttonStyle}>Sign Up</button>
                 </div>
             </form>
-            {formState.password.length > 6 && formState.numbersValid ? 
-                formState.matchValid ? <p className="valid">Password matches</p> : <p className="invalid">Passwords must match.</p> 
-            : <p className="invalid">Passwords must be at least 7 characters and contain at least one number.</p>
-            }
         </div>
     )
 }
