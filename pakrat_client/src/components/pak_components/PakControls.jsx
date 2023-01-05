@@ -90,7 +90,7 @@ export default function PakControls () {
     return (
         <div>
             <div className="grid grid-cols-3">
-                <div>{pakInfo.name}</div>
+                <div className='text-xl font-playfair'>{pakInfo.name}</div>
                 <PackingToggler />
                 <div className="flex justify-end items-start">
                     <div onClick={submitPak} className={buttonStyle}>Save Pak</div>

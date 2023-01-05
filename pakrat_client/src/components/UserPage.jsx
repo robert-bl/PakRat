@@ -39,7 +39,7 @@ export default function UserPage () {
 
     return (
         (authenticated && user && parseInt(user.id) === parseInt(user_id) && pakList) ? (
-        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2 mt-10">
+        <div className="w-4/5 mx-auto shadow-2xl bg-light p-2 my-10">
             <div>
             <div className="text-xl">PAKS</div>
             <div onClick={() => goTo('/create_pak')} className={buttonStyle}>Create New Pak</div>

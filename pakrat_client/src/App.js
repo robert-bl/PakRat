@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Main from './components/Main';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import { DataContext } from './DataContext';
 
 function App() {
@@ -53,6 +54,8 @@ function App() {
       <DataContext.Provider value={{authenticated, toggleAuthenticated, user, setUser, handleLogOut}}>
         <NavBar />
         <Main />
+        <Footer />
+        <div className='h-10'></div>
       </DataContext.Provider>
     </div>
   );
