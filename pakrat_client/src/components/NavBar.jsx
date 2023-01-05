@@ -23,7 +23,7 @@ export default function NavBar () {
                 
             </div>
             <div className="flex-col gap-2">
-            <div onClick={() => goTo('/user/',user.id)} className={navLinkStyle}>Home</div>
+            {user ? <div onClick={() => goTo('/user/',user.id)} className={navLinkStyle}>Home</div> : <div onClick={() => goTo('/')} className={navLinkStyle}>Home</div>}
                 {user ? <div onClick={() => handleLogOut()} className={navLinkStyle}>Log Out</div> : null}
             </div>
         </div>

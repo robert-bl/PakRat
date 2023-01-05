@@ -31,9 +31,8 @@ export default function LogIn () {
         const payload = await LogInUser(formState)
         setFormState(initialState)
         console.log(payload)
-        await setUser(payload)
+        setUser(payload)
         toggleAuthenticated(true)
-        goTo('/user/',user.id)
     }
 
     const LogInUser = async (data) => {
@@ -50,26 +49,21 @@ export default function LogIn () {
 
 
     return (
+        user ?
+        <div>
+            <div onClick={goTo('/user/',user.id)} className={buttonStyle}>Go To User Page</div>
+        </div>
+        :
         <div className="w-4/5 mx-auto shadow-2xl border border-med">
             <form onSubmit={handleSubmit}>
                 <div className='ml-60'>
                 <div className='flex-col'>
                     <div htmlFor="email">Email</div>
-                    <input 
-                        type="text" 
-                        placeholder="Email" 
-                        id="email"
-                        onChange={handleChange} 
-                        value={formState.email} className='border border-med rounded-sm'/>
+                    <input type="text" placeholder="Email" id="email" onChange={handleChange} value={formState.email} className='border border-med rounded-sm'/>
                 </div>
                 <div className='flex-col'>
                     <div htmlFor="password">Password</div>
-                    <input 
-                        type="password" 
-                        placeholder="Password" 
-                        id="password" 
-                        onChange={handleChange}
-                        value={formState.password} className='border border-med rounded-sm'/>
+                    <input type="password" placeholder="Password" id="password" onChange={handleChange} value={formState.password} className='border border-med rounded-sm'/>
                 </div>
                 <button type="submit" className={buttonStyle}>Log In</button>
                 </div>

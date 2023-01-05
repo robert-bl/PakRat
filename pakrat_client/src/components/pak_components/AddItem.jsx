@@ -30,10 +30,10 @@ export default function AddItem ({catName}) {
     return (
         packingMode ?
         null :
-        <div>
+        <div className="my-2">
             <form onSubmit={handleSubmit}>
-                <input type='text' id='name' placeholder=" Add Item" onChange={handleChange} value={newItem.name} className='border-2 text-dark'></input>
-                <button type='submit' className="bg-highlight px-2 rounded-r-md">+</button>
+                <input type='text' id='name' placeholder="Add Item" onChange={handleChange} value={newItem.name} className='border-t border-l border-b border-highlight pl-2'></input>
+                <button type='submit' className="bg-highlight px-2 border-t border-r border-b border-highlight rounded-r-md">+</button>
             </form>
         </div>
     )

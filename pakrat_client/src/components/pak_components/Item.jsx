@@ -2,6 +2,10 @@
 import { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../DataContext'
 
+import { GoChevronUp, GoChevronDown, GoPlusSmall, GoX } from "react-icons/go"
+import { HiPlusSm, HiMinusSm, HiOutlineX } from "react-icons/hi"
+
+
 
 export default function Item ({itemInfo, itemIndex}) {
 
@@ -43,6 +47,7 @@ export default function Item ({itemInfo, itemIndex}) {
         let cutPak = [...pakItems]
         cutPak.splice(itemIndex, 1)
         setPakItems(cutPak)
+        setOpenToggle(!openToggle)
     }
 
     const handlePacked = () => {
@@ -64,18 +69,21 @@ export default function Item ({itemInfo, itemIndex}) {
                 <div className='border border-light rounded-2xl ' onClick={handlePacked}>Packed</div>
         </div>
         :
-        <div>
+        <div className='flex justify-between content-center border-b-2 border-highlight'>
             <div className='flex flex-row gap-2' onClick={() => setOpenToggle(!openToggle)}>
                 <div>{itemInfo.name}</div>
                 {pakItems[itemIndex].count > 1 ? <div>{pakItems[itemIndex].count}</div> : null}
             </div>
-            {!openToggle ? null :
-            <div className='bg-med'>
-                <button onClick={add}>Add</button>
-                <button onClick={sub}>Sub</button>
-                <button onClick={remove}>Remove</button>
+
+            <div className='flex'>
+                <div className='flex flex-col mr-4'>
+                    <button onClick={add}><HiPlusSm/></button>
+                    <button onClick={sub}><HiMinusSm/></button>
+                </div>
+                <button onClick={remove}><HiOutlineX/></button>
             </div>
-            }
         </div>
     )
 }
+
+// {!openToggle ? null :
