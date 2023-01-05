@@ -9,7 +9,7 @@ import ProgressBar from "./ProgressBar"
 
 export default function PakControls () {
 
-    const { pakInfo, setPakInfo, pakItems, toDelete, setToDelete, getPakInfo, packingMode } = useContext(DataContext)
+    const { pakInfo, setPakItems, pakItems, toDelete, setToDelete, getPakInfo, packingMode } = useContext(DataContext)
 
     const postPak = async (data) => {
         try {
@@ -85,6 +85,16 @@ export default function PakControls () {
         }
     }
 
+    const unpack = () => {
+        let unpackingItems = pakItems
+        let unpacked = unpackingItems.map((x) => {
+            x.packed = false
+            return x
+        })
+        setPakItems(unpacked)
+        // setPakItems(unpacked)
+    }
+
     const buttonStyle = `bg-highlight text-light w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-light hover:text-highlight duration-300 border-2 border-highlight`
 
     return (
@@ -96,7 +106,12 @@ export default function PakControls () {
                     <div onClick={submitPak} className={buttonStyle}>Save Pak</div>
                 </div>
             </div>
-            {packingMode ? <ProgressBar /> : <div className="h-6 border-b-2 border-highlight"></div>}
+            {packingMode ? 
+            <div>
+                <div onClick={unpack} className='bg-light border border-dark w-36 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-dark hover:text-light duration-300 ml-auto'>Unpack All Items</div>
+                <ProgressBar /> 
+            </div>
+            : <div className="h-6 border-b-2 border-highlight"></div>}
         </div>
     )
 }
