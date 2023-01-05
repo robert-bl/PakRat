@@ -10,8 +10,8 @@ export default function PakSubCat ({catName}) {
 
     return (
         !pakItems ? null :
-        <div className="border-2 border-highlight rounded-2xl mx-4 my-4 px-2 py-2">
-            <h1>{catName}</h1>
+        <div className="border-2 border-highlight rounded-2xl m-2">
+            <div className='text-lg font-playfair bg-med rounded-t-xl p-2'>{catName}</div>
             {pakItems.map((x, i) => (
                 x.subCategory === catName ? 
                 <div key={i}>

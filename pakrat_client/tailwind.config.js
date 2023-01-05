@@ -7,13 +7,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        dark: "#4E3D69",
-        med: "#A47DE5",
-        light: "#FEF6FF",
-        highlight: "#E8D5B5"
+        dark: "#4D220C",
+        med: "#EBAE92",
+        light: "#DFE0DF",
+        highlight: "#00755D"
+        // dark: "#580000",
+        // med: "#C55624",
+        // light: "#EDE9D0",
+        // highlight: "#A9A3EC"
       },
       fontFamily: {
-        merri: ['Merriweather Sans', 'sans-serif']
+        lato: ['Lato', 'sans-serif'],
+        playfair: ['Playfair Display', 'serif']
       }
     },
   },
