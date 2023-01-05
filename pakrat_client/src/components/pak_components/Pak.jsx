@@ -5,6 +5,7 @@ import axiosCreate from "../../services/apiServices"
 
 import PakControls from "./PakControls"
 import PakSubCat from "./PakSubCat"
+import AddSubCat from "./AddSubCat"
 
 export default function Pak () {
 
@@ -52,6 +53,7 @@ export default function Pak () {
                     <PakSubCat catName={x} key={x} />
                 ))}
             </div>
+            <AddSubCat />
             </DataContext.Provider>
         </div>
         :

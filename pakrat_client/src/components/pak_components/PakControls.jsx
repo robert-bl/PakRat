@@ -9,7 +9,7 @@ import ProgressBar from "./ProgressBar"
 
 export default function PakControls () {
 
-    const { pakInfo, setPakInfo, pakItems, toDelete, setToDelete, getPakInfo } = useContext(DataContext)
+    const { pakInfo, setPakInfo, pakItems, toDelete, setToDelete, getPakInfo, packingMode } = useContext(DataContext)
 
     const postPak = async (data) => {
         try {
@@ -87,11 +87,9 @@ export default function PakControls () {
 
     return (
         <div>
-            <div>New Category</div>
-            <AddSubCat />
             <PackingToggler />
+            {packingMode ? <ProgressBar /> : null}
             <div onClick={submitPak}>Save Pak</div>
-            <ProgressBar />
         </div>
     )
 }

@@ -20,11 +20,13 @@ export default function AddItem ({catName}) {
     }
 
     const handleSubmit = (event) => {
+        if (newItem.name !== '') {
         event.preventDefault()
         // console.log(pakItems)
         setPakItems([...pakItems, newItem])
         // console.log(pakItems)
         setNewItem(emptyItemForm)
+        }
     }
 
     return (
@@ -33,7 +35,7 @@ export default function AddItem ({catName}) {
         <div className="my-2">
             <form onSubmit={handleSubmit}>
                 <input type='text' id='name' placeholder="Add Item" onChange={handleChange} value={newItem.name} className='border-t border-l border-b border-highlight pl-2 rounded-bl-md'></input>
-                <button type='submit' className="bg-highlight px-2 border-t border-r border-b border-highlight rounded-r-md">+</button>
+                <button type='submit' className="bg-highlight px-2 border-t border-r border-b border-highlight rounded-r-md text-light">+</button>
             </form>
         </div>
     )

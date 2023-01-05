@@ -17,7 +17,7 @@ export default function NavBar () {
     const navLinkStyle = `cursor-pointer`
 
     return (
-        <div className="flex justify-between p-2 bg-med font-playfair">
+        <div className="flex justify-between p-2 bg-med font-playfair border-b-4 border-highlight">
             <div className='text-6xl p-2 text-dark flex'><RatIcon/>PakRat</div>
             <div>
                 
