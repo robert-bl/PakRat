@@ -2,7 +2,8 @@
 import { useContext, useEffect, useState } from 'react'
 import { DataContext } from '../../DataContext'
 
-import { GoChevronUp, GoChevronDown, GoPlusSmall, GoX } from "react-icons/go"
+import { ImDownload, ImCheckmark } from "react-icons/im"
+import { BsFillBagPlusFill, BsFillBagCheckFill } from "react-icons/bs"
 import { HiPlusSm, HiMinusSm, HiOutlineX } from "react-icons/hi"
 
 
@@ -57,19 +58,21 @@ export default function Item ({itemInfo, itemIndex}) {
     }
 
     let packedColorCode = ''
-    pakItems[itemIndex].packed ? packedColorCode = 'bg-med' : packedColorCode = 'bg-transparent'
+    pakItems[itemIndex].packed ? packedColorCode = 'bg-highlight text-light' : packedColorCode = 'bg-transparent'
 
-    let packingItemStyle = `flex flex-row gap-2 ${packedColorCode}`
+    let packingItemStyle = `flex flex-row justify-between gap-2 p-2 ${packedColorCode}`
 
     return (
         packingMode ?
         <div className={packingItemStyle}>
+            <div className='flex gap-2'>
                 <div>{itemInfo.name}</div>
                 {pakItems[itemIndex].count > 1 ? <div>{pakItems[itemIndex].count}</div> : null}
-                <div className='border border-light rounded-2xl ' onClick={handlePacked}>Packed</div>
+                </div>
+            <div onClick={handlePacked}>{!pakItems[itemIndex].packed ? <ImDownload/> : <ImCheckmark/>}</div>
         </div>
         :
-        <div className='flex justify-between content-center border-b-2 border-highlight'>
+        <div className='flex justify-between content-center border-b-2 border-highlight p-2'>
             <div className='flex flex-row gap-2' onClick={() => setOpenToggle(!openToggle)}>
                 <div>{itemInfo.name}</div>
                 {pakItems[itemIndex].count > 1 ? <div>{pakItems[itemIndex].count}</div> : null}

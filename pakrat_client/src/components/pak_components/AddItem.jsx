@@ -32,7 +32,7 @@ export default function AddItem ({catName}) {
         null :
         <div className="my-2">
             <form onSubmit={handleSubmit}>
-                <input type='text' id='name' placeholder="Add Item" onChange={handleChange} value={newItem.name} className='border-t border-l border-b border-highlight pl-2'></input>
+                <input type='text' id='name' placeholder="Add Item" onChange={handleChange} value={newItem.name} className='border-t border-l border-b border-highlight pl-2 rounded-bl-md'></input>
                 <button type='submit' className="bg-highlight px-2 border-t border-r border-b border-highlight rounded-r-md">+</button>
             </form>
         </div>

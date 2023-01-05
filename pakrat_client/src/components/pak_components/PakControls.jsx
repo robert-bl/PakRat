@@ -4,6 +4,7 @@ import axiosCreate from "../../services/apiServices"
 
 import AddSubCat from "./AddSubCat"
 import PackingToggler from "./PackingToggler"
+import ProgressBar from "./ProgressBar"
 
 
 export default function PakControls () {
@@ -90,6 +91,7 @@ export default function PakControls () {
             <AddSubCat />
             <PackingToggler />
             <div onClick={submitPak}>Save Pak</div>
+            <ProgressBar />
         </div>
     )
 }
