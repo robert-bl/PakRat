@@ -10,7 +10,7 @@ export default function PakSubCat ({catName}) {
 
     return (
         !pakItems ? null :
-        <div className="border-2 border-highlight rounded-2xl m-2">
+        <div className="border-2 border-highlight rounded-2xl m-2 shadow-xl">
             <div className='text-lg font-playfair bg-med rounded-t-xl p-2'>{catName}</div>
             <div className='m-2'>
             {pakItems.map((x, i) => (
