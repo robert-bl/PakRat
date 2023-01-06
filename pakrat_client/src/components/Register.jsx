@@ -12,41 +12,14 @@ export default function Register () {
         email: '',
         password: '',
         passwordConfirm: '',
-        // matchValid: false,
-        // lengthValid: false,
-        // numbersValid: false
     }
     
     const [formState, setFormState] = useState(initialState)
     
     const handleChange = (event) => {
-    
-        // let form = formState
-    
-        // form = {...form, [event.target.id]: event.target.value}
-    
-        // if (form.password === form.passwordConfirm && form.password !== '') {
-        //     form = {...form, matchValid: true}
-        // } else {
-        //     form = {...form, matchValid: false}
-        // }
-    
-        // if (form.password.length > 6) {
-        //     form ={...form, lengthValid: true}
-        // } else {
-        //     form ={...form, lengthValid: false}
-        // }
-    
-        // if (/[0-9]/.test(form.password)) {
-        //     form = {...form, numbersValid: true}
-        // } else {
-        //     form = {...form, numbersValid: false}
-        // }
-    
 
         setFormState({...formState, [event.target.id]: event.target.value})
-        // console.log(formState)
-    }
+        }
 
     const registerUser = async (data) => {
         try {
@@ -62,12 +35,10 @@ export default function Register () {
             await registerUser(formState)
             setFormState(initialState)
             navigate(`/login`)
-            // setFormState({...formState, matchValid: true})
         } else {
             console.log(`passwords don't match`)
-            // setFormState({...formState, matchValid: false})
+
         }
-        // console.log(formState)
     }
 
     const buttonStyle = `bg-med w-24 h-8 flex items-center justify-center rounded-md cursor-pointer my-4 hover:bg-dark hover:text-light duration-300`

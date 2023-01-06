@@ -22,15 +22,12 @@ export default function LogIn () {
 
     const handleChange = (event) => {
         setFormState({...formState, [event.target.id]: event.target.value})
-        // console.log(formState)
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        console.log(formState)
         const payload = await LogInUser(formState)
         setFormState(initialState)
-        console.log(payload)
         setUser(payload)
         toggleAuthenticated(true)
     }

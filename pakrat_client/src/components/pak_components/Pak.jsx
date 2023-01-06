@@ -26,7 +26,6 @@ export default function Pak () {
 
     const getPakInfo = async () => {
         const response = await axiosCreate.get(`/api/pak/read/${pak_id}`)
-        console.log(response.data)
         let readSubCats = []
         response.data.pakItems.map((x) => {
             return readSubCats.includes(x.subCategory) ? null : readSubCats.push(x.subCategory)

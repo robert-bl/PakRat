@@ -75,12 +75,10 @@ export default function PakControls () {
 
     const submitPak = () => {
         if (!pakInfo.id) {
-            console.log('no id')
         let constructItems = {pakItems: pakItems}
         let insertItems = {...pakInfo, ...constructItems}
         postPak(insertItems)
         } else {
-            console.log('id')
             updatePak()
         }
     }

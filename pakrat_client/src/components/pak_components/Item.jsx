@@ -19,7 +19,6 @@ export default function Item ({itemInfo, itemIndex}) {
         let updateItems = [...pakItems]
         updateItems[itemIndex].count += 1
         setPakItems(updateItems)
-        console.log(pakItems[itemIndex].count)
     }
 
     const sub = (event) => {
@@ -29,7 +28,6 @@ export default function Item ({itemInfo, itemIndex}) {
             updateItems[itemIndex].count -= 1
             setPakItems(updateItems)
         }
-        console.log(pakItems[itemIndex].count)
     }
 
     const remove = (event) => {

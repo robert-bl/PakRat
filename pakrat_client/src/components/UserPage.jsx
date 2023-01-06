@@ -15,7 +15,6 @@ export default function UserPage () {
     const getUserPaks = async () => {
         try {
         const response = await axiosCreate.get(`/api/pak/get_paks/${user_id}`)
-        console.log(response.data)
         setPakList(response.data)
         return response.data
         } catch (error) {

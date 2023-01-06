@@ -42,11 +42,8 @@ function App() {
     const token = localStorage.getItem('token')
 
     if (token) {
-      // console.log(token)
       checkToken()
     }
-    // console.log(user)
-    // console.log('check')
   }, [])
 
   return (

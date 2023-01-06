@@ -20,7 +20,6 @@ export default function CreatePak () {
 
     const handleChange = (event) => {
         setNewPak({...newPak, [event.target.id]: event.target.value})
-        console.log(newPak)
     }
 
     const postPak = async (data) => {
