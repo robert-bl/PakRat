@@ -14,7 +14,7 @@ const DeleteItems = async (req, res) => {
 
 const UpdateItems = async (req, res) => {
     //PATH: /api/item/update
-        req.body.items.map(async (updatedBody) => {
+        req.body.items.forEach(async (updatedBody) => {
             try {
             let updatedItem = await Item.update(updatedBody, {where:{id: updatedBody.id}, returning: true})
             res.write(JSON.stringify(updatedItem))
@@ -29,7 +29,7 @@ const UpdateItems = async (req, res) => {
 const CreateItems = async (req, res) => {
     //PATH: /api/item/create
     let pakId = req.body.pakId
-    req.body.items.map(async (x) => {
+    req.body.items.forEach(async (x) => {
         try {
             let newItemBody = {pakId, ...x}
             let newItem = await Item.create(newItemBody)

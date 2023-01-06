@@ -11,14 +11,14 @@ export default function PakControls () {
 
     const { pakInfo, setPakItems, pakItems, toDelete, setToDelete, getPakInfo, packingMode } = useContext(DataContext)
 
-    const postPak = async (data) => {
-        try {
-            const response = await axiosCreate.post('/api/pak/create_new_pak/1', data)
-            return response.data
-        } catch (error) {
-            throw error
-        }
-    }
+    // const postPak = async (data) => {
+    //     try {
+    //         const response = await axiosCreate.post('/api/pak/create_new_pak', data)
+    //         return response.data
+    //     } catch (error) {
+    //         throw error
+    //     }
+    // }
 
     const updatePak = async () => {
         let itemsData = sortItemsForAxios(pakItems, toDelete)
@@ -73,15 +73,15 @@ export default function PakControls () {
         return sortedItems
     }
 
-    const submitPak = () => {
-        if (!pakInfo.id) {
-        let constructItems = {pakItems: pakItems}
-        let insertItems = {...pakInfo, ...constructItems}
-        postPak(insertItems)
-        } else {
-            updatePak()
-        }
-    }
+    // const submitPak = () => {
+    //     if (!pakInfo.id) {
+    //     let constructItems = {pakItems: pakItems}
+    //     let insertItems = {...pakInfo, ...constructItems}
+    //     postPak(insertItems)
+    //     } else {
+    //         updatePak()
+    //     }
+    // }
 
     const unpack = () => {
         let unpackingItems = pakItems
@@ -101,7 +101,7 @@ export default function PakControls () {
                 <div className='text-xl font-playfair'>{pakInfo.name}</div>
                 <PackingToggler />
                 <div className="flex justify-end items-start">
-                    <div onClick={submitPak} className={buttonStyle}>Save Pak</div>
+                    <div onClick={updatePak} className={buttonStyle}>Save Pak</div>
                 </div>
             </div>
             {packingMode ? 

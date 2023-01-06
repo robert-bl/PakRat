@@ -26,7 +26,7 @@ export default function NavBar () {
             <div className="flex-col gap-2">
                 {user ? 
                 <div>
-                    <div className="flex-col bg-highlight p-2 text-light rounded-bl-md">
+                    <div className="flex-col bg-highlight p-2 text-light rounded-bl-md -mt-2 -mr-2">
                         <BiUserCircle/>
                         <div>{user ? user.username : null}</div>
                     </div>

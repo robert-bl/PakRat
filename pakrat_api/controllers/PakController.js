@@ -37,6 +37,7 @@ const CreatePak = async (req, res) => {
         // let userId = parseInt(req.params.userId)
         // let newBody = {userId, ...req.body}
         let newPak = await Pak.create(req.body)
+        console.log(newPak)
         res.send(newPak)
 
         // let pakId = newPak.dataValues.id
