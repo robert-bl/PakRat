@@ -4,6 +4,7 @@ import LogIn from "./LogIn"
 import Pak from "./pak_components/Pak"
 import Register from "./Register"
 import UserPage from "./UserPage"
+import LogInVerified from "./LogInVerified"
 
 
 
@@ -24,6 +25,7 @@ export default function Main () {
                 <Route path='/register' element={<Register />}/>
                 <Route path='/login' element={<LogIn />}/>
                 <Route path='/user/:user_id' element={<UserPage />}/>
+                <Route path='/ver' element={<LogInVerified />}/>
             </Routes>
                 
             

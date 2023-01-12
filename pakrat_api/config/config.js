@@ -1,4 +1,4 @@
-requestAnimationFrame('dotenv').config()
+require('dotenv').config()
 module.exports = {
   "development": {
     "database": "pakrat_database_development",

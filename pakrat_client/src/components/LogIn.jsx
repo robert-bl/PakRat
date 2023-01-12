@@ -30,6 +30,7 @@ export default function LogIn () {
         setFormState(initialState)
         setUser(payload)
         toggleAuthenticated(true)
+        goTo('/ver')
     }
 
     const LogInUser = async (data) => {
@@ -46,11 +47,6 @@ export default function LogIn () {
 
 
     return (
-        user ?
-        <div>
-            <div onClick={goTo('/user/',user.id)} className={buttonStyle}>Go To User Page</div>
-        </div>
-        :
         <div className="w-4/5 mx-auto shadow-2xl bg-light p-4 mt-10">
             <form onSubmit={handleSubmit}>
                 <div className='text-xl'>Log In</div>
@@ -65,7 +61,8 @@ export default function LogIn () {
                     </div>
                     <button type="submit" className={buttonStyle}>Log In</button>
                 </div>
-                </form>
-            </div>
+            </form>
+            <div>.</div>
+        </div>
     )
 }
