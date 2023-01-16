@@ -10,7 +10,7 @@ export default function ProgressBar () {
         let packedSum = 0
         pakItems.map((x) => x.packed ? packedSum += 1 : null)
         let packedPercentage =  Math.floor((packedSum/pakItems.length)*100)
-        packedPercentage === NaN ? setProgress(`0%`) : setProgress(`${packedPercentage}%`)
+        isNaN(packedPercentage) ? setProgress(`0%`) : setProgress(`${packedPercentage}%`)
     }, [pakItems])
 
     return (
