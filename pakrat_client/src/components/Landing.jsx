@@ -2,6 +2,7 @@ import { useNavigate, Link } from "react-router-dom"
 import { useContext } from "react"
 import { DataContext } from "../DataContext"
 
+import ULPak from "./pak_components/userlessPak_components/ULPak"
 
 export default function Landing () {
     const navigate = useNavigate()
@@ -16,12 +17,12 @@ export default function Landing () {
 
     return (
         <div className="grid grid-cols-2 m-10">
-            <div className="m-auto">
+            <div className="mx-auto">
                 <div onClick={() => goTo('/login')} className={buttonStyle}>Log In</div>
                 <div onClick={() => goTo('/register')} className={buttonStyle}>Register</div>
             </div>
             <div className="m-auto">
-                <div onClick={() => goTo('/create_pak')} className={buttonStyle}>Create Pak</div>
+                <ULPak/>
             </div>
         </div>
     )
