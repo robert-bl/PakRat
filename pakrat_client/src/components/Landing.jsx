@@ -18,7 +18,7 @@ export default function Landing () {
     return (
         <div className="grid grid-cols-2 m-10">
             <div className="m-auto">
-                <div className="mx-auto text-center">Welcome to PakRat. Try out the 'Pak' packing list form here. Register and Log In to save an reuse Paks.</div>
+                <div className="mx-auto text-center">Welcome to PakRat. Try out the 'Pak' packing list form here. Register and Log In to save and reuse Paks.</div>
                 <ULPak/>
             </div>
             <div className="mx-auto w-3/5 border-2 rounded-lg border-highlight m-auto">
