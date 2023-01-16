@@ -2,7 +2,7 @@ import { useState } from "react"
 import { DataContext } from "../../../DataContext"
 
 import AddSubCat from "../AddSubCat"
-import ULPakControls from "./UlPakControls"
+import ULPakControls from "./ULPakControls"
 import PakSubCat from "../PakSubCat"
 
 export default function ULPak () {
