@@ -22,6 +22,7 @@ export default function Landing () {
                 <div onClick={() => goTo('/register')} className={buttonStyle}>Register</div>
             </div>
             <div className="m-auto">
+            <div className="mx-auto text-center">Welcome to PakRat. Try out the 'Pak' packing list form here. Register and Log In to save an reuse Paks.</div>
                 <ULPak/>
             </div>
         </div>

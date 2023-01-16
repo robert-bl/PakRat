@@ -62,7 +62,6 @@ export default function LogIn () {
                     <button type="submit" className={buttonStyle}>Log In</button>
                 </div>
             </form>
-            <div>.</div>
         </div>
     )
 }
