@@ -1,6 +1,7 @@
 import axios from "axios"
 
-const BASE_URL = 'https://pakrat-hapi.herokuapp.com'
+const BASE_URL = 'https://pakrat-hapi-e3f663f99110.herokuapp.com/'
+//'https://pakrat-hapi.herokuapp.com'
 
 const axiosCreate = axios.create({ baseURL: BASE_URL })
 
